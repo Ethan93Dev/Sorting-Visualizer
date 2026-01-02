@@ -1,12 +1,115 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./app.css" />
-    <title>Document</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <title>Sorting Algorithm visualizer</title>
   </head>
   <body>
-    <script src="/app.js"></script>
+    <h1>Sorting Algorithm visualizer</h1>
+    <canvas id="mainCanvas"></canvas>
+    <br />
+
+    <div id="all-buttons">
+      <div>
+        <button class="button" onclick="initiateArray()">
+          <svg
+            stroke="#ffffff"
+            xml:space="preserve"
+            viewBox="0 0 80 80"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+            id="Capa_1"
+            version="1.1"
+            fill="#ffffff"
+          >
+            <g stroke-width="0" id="SVGRepo_bgCarrier"></g>
+            <g
+              stroke-linejoin="round"
+              stroke-linecap="round"
+              id="SVGRepo_tracerCarrier"
+            ></g>
+            <g id="SVGRepo_iconCarrier"></g>
+          </svg>
+          New Array
+        </button>
+      </div>
+      <div id="algorithms" class="radio-inputs">
+        <label>
+          <input class="radio-input" type="radio" name="engine" />
+          <span class="radio-tile radio-label" id="a"> Bubble Sort </span>
+        </label>
+        <label>
+          <input class="radio-input" type="radio" name="engine" />
+          <span class="radio-tile radio-label" id="b"> Insertion Sort </span>
+        </label>
+        <label>
+          <input class="radio-input" type="radio" name="engine" />
+          <span class="radio-tile radio-label" id="c"> Merge Sort </span>
+        </label>
+        <label>
+          <input class="radio-input" type="radio" name="engine" />
+          <span class="radio-tile radio-label" id="d"> Quick Sort </span>
+        </label>
+        <label>
+          <input class="radio-input" type="radio" name="engine" />
+          <span class="radio-tile radio-label" id="e"> Heap Sort </span>
+        </label>
+      </div>
+      <div>
+        <button onclick="runAlgorithm()" class="btn-play">
+          <span class="back"></span>
+          <span class="front"></span>
+        </button>
+      </div>
+    </div>
+    <hr />
+    <hr />
+    <div class="slider">
+      Array size
+      <input
+        id="rangeNumber"
+        type="range"
+        min="5"
+        max="200"
+        value="15"
+        oninput="addColumnsToArray()"
+      />
+      <p id="rangeValue">15</p>
+      &nbsp;&nbsp;&nbsp;
+      <label>f/sec:</label>
+      <select id="seconds-selected">
+        <option value="5">12</option>
+        <option value="20">3</option>
+        <option value="60">1</option>
+        <option value="1">60</option>
+      </select>
+    </div>
+
+    <script type="text/javascript" src="column.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+    <footer
+      style="
+        color: #61aa55;
+        bottom: 0;
+        left: 12px;
+        position: fixed;
+        font-style: italic;
+      "
+    >
+      <a
+        class="footer-notes"
+        href="https://github.com/Ethan93Dev/Sorting-Visualizer.git"
+        target="_blank"
+      >
+        <i class="fa fa-github" style="font-size: 24px"> </i>
+      </a>
+      <p class="footer-notes">Ethan</p>
+    </footer>
   </body>
 </html>
